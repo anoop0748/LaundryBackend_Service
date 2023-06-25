@@ -20,7 +20,6 @@ app.use(reg_route);
 
 app.use('/successfulLogin', async (req, res, next) => {
     const token = req.headers.authorization;
-
     if (token) {
         jwt.verify(token, 'DIDBYANOOP', function (err, decoded) {
             if (err) {

@@ -42,7 +42,7 @@ reg_log_app.post('/login', async (req, res) => {
 
     try {
         let user;
-        if (typeof (req.body.email) === Number) {
+        if (!isNaN(req.body.email)) {
             user = await Data.findOne({ phone: req.body.email });
         }
         else {
